@@ -2,14 +2,10 @@
 
 const total = 100;
 
-const ordered = 50;
+const order = 80;
 
-const value = 5;
-
-const isInRange = value >= 1 && value <= 50;
-
-if (isInRange) {
-  console.log("Заказ оформлен, с вами свяжется менеджер");
+if (order >= 1 && order <= 100) {
+  console.log("Заказ оформлен, с вами свяжется менеджер!");
 } else {
-  console.log("На складе недостаточно товаров!");
+  console.log("Недостаточно товара на складе!!");
 }

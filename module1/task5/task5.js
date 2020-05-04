@@ -1,43 +1,35 @@
 "use strict";
+let country = prompt("Enter country");
 
-const china = "Китай";
-const chili = "Чили";
-const australia = "Австалия";
-const india = "Индия";
-const jamaika = "Ямайка";
+if (country !== null) {
+  country = country.toLowerCase();
+}
 
-let price1 = 100;
-let price2 = 250;
-let price3 = 170;
-let price4 = 80;
-let price5 = 120;
+let price;
 
-let message;
-
-let userChoise = prompt("Выберите страну!");
-switch (userChoise) {
-  case china:
-    userChoise = alert(`Доставка в ${china} будет стоить ${price1} кредитов`);
+switch (country) {
+  case "китай":
+    price = 100;
     break;
-
-  case chili:
-    userChoise = alert(`Доставка в ${chili} будет стоить ${price2} кредитов`);
+  case "чили":
+    price = 250;
     break;
-
-  case australia:
-    userChoise = alert(
-      `Доставка в ${australia} будет стоить ${price3} кредитов`
-    );
+  case "австралия":
+    price = 170;
     break;
-
-  case india:
-    userChoise = alert(`Доставка в ${india} будет стоить ${price4} кредитов`);
+  case "индия":
+    price = 80;
     break;
-
-  case jamaika:
-    userChoise = alert(`Доставка в ${jamaika} будет стоить ${price5} кредитов`);
+  case "ямайка":
+    price = 120;
     break;
-
   default:
-    userChoise = alert("В вашей стране доставка не доступна");
+    price = -1;
+}
+
+if (price !== -1) {
+  country = country.charAt(0).toUpperCase() + country.slice(1);
+  alert(`Доставка в ${country} будет стоить ${price} кредитов`);
+} else {
+  alert("В вашей стране доставка не доступна");
 }
