@@ -12,10 +12,13 @@ let countOrder = prompt("Сколько желаете приобрести др
 
 if (countOrder === null) {
   total = alert("Отменено пользователем!");
-} else if ((totalPrice = pricePerDroir * countOrder)) {
-} else if (credits - totalPrice <= 0) {
-  alert("Недостаточно средств на счету!.");
 } else {
-  credits = credits - totalPrice;
+  totalPrice = pricePerDroir * countOrder;
+
+  if (totalPrice > credits) {
+    alert("Недостаточно средств на счету!.");
+  } else {
+    credits = credits - totalPrice;
+  }
+  alert(`Вы купили ${countOrder} дроидов, на счету осталось ${credits}`);
 }
-alert(`Вы купили ${countOrder} дроидов, на счету осталось ${credits}`);
